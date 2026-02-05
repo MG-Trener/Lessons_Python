@@ -23,18 +23,37 @@
 #
 # Задача 4: Напишите функцию, которая принимает один аргумент (число) и
 # выводит его квадрат. Будет ли этот аргумент доступен вне функции?
-def kvadrat():
-    n = int(input('Введи число: '))
-    print(n**2)
-kvadrat() # не совсем верное решение. Ниже как надо
+# def kvadrat():
+#     n = int(input('Введи число: '))
+#     print(n**2)
+# kvadrat() # не совсем верное решение. Ниже как надо
+#
+# def kvadrat2(n):
+#     print(n ** 2)
+# kvadrat2(8)       # 64
+# kvadrat2(15)      # 225
+#
+# # или
+# def kvadrat3(n):
+#     print(n ** 2)
+# n = int(input("Введи число: "))
+# kvadrat3(n)
 
-def kvadrat2(n):
-    print(n ** 2)
-kvadrat2(8)       # 64
-kvadrat2(15)      # 225
+# Задача 7: Напишите программу, где есть глобальная переменная limit =
+# 100. Создайте функцию, которая проверяет, больше ли переданное ей
+# число, чем limit.
+limit = 100
+print('Начальная сумма: ', limit)
 
-# или
-def kvadrat3(n):
-    print(n ** 2)
-n = int(input("Введи число: "))
-kvadrat3(n)
+def proverka():
+    global limit
+    limit += 30
+    if limit > 200:
+        print('Передано большее, чем начальная сумма', limit)
+        limit -= 200
+        print('Отнимаем оп 200', limit)
+    else:
+        print('После каждого добавления: ', limit)
+
+for i in range(15):
+    proverka()
