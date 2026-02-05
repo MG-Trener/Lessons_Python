@@ -1,7 +1,24 @@
-names = ["Alexander Pushkin", "Mikhail Lermontov", "Anton Chekhov"]
 
-initials = [
-    f"{n.split()[0][0]}.{n.split()[1][0]}."  # split -> ["Имя","Фамилия"], [0][0] первая буква имени, [1][0] первая буква фамилии
-    for n in names                            # перебираем каждую строку списка
+payments = [
+    {"item": "Burger", "amount": 2500, "cat": "Food"},
+    {"item": "Taxi", "amount": 1200, "cat": "Transport"},
+    {"item": "Pizza", "amount": 3500, "cat": "Food"}
 ]
-print(initials)
+
+report = {}
+
+for p in payments:
+    category = p ["cat"]
+    report.setdefault(category, {
+        "total": 0,
+        "items": []
+    })
+    # print(report)
+    report[category]["total"] += p["amount"]
+    report[category]["items"].append(p["item"])
+# print(report)
+for r in report.values():
+    print(r)
+print()
+for r in report.items():
+    print(r)
