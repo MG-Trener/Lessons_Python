@@ -87,7 +87,7 @@
 # is_light_on = False
 # def switch():
 #     global is_light_on
-#     if is_light_on == True:
+#     if is_light_on:
 #         is_light_on = False
 #         print('Выключено')
 #     else:
@@ -108,7 +108,7 @@
 # shopping_list = []
 # print('Пустой список: ', shopping_list)
 # def add_milk():
-#     #global shopping_list
+#     # global shopping_list
 #     shopping_list.append('Молоко') # идет мутация глобальной переменной :-)
 # add_milk()
 # print('Заполненный список', shopping_list)
