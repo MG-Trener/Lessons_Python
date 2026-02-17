@@ -8,6 +8,7 @@ def create_email(username: str, domain: str = "gmail.com") -> str:
     # Возвращает строку (-> str)
 
     return f"{username}@{domain}"  # Формируем email через f-строку
+print(create_email("mihagavr"))
 
 
 # ==============================
@@ -23,6 +24,7 @@ def get_rectangle_area(width: float, height: float | None = None) -> float:
         return width * width  # Площадь квадрата
     else:
         return width * height  # Площадь прямоугольника
+print(get_rectangle_area( 3, 5))
 
 
 # ==============================
@@ -33,10 +35,9 @@ def repeat_text(text: str, times: int = 2) -> str:
     # text — строка
     # times — сколько раз повторить (по умолчанию 2)
 
-    return " ".join([text] * times)
-    # [text] * times — создаёт список повторений
-    # " ".join(...) — соединяет элементы через пробел
-
+    return " ".join([text] * times) # [text] * times — создаёт список повторений
+                                    # " ".join(...) — соединяет элементы через пробел
+print(repeat_text("Astana", 3))
 
 # ==============================
 # ЗАДАЧА 4: «Конструктор цен»
@@ -48,6 +49,7 @@ def final_price(net_price: float, tax: float = 0.16) -> float:
 
     return net_price * (1 + tax)
     # Добавляем налог к цене
+print(final_price(500))
 
 
 # ==============================
@@ -61,6 +63,8 @@ def update_status(order_id: int, status: str = "Обработка") -> dict[str
         "id": order_id,
         "status": status
     }
+print(update_status(45, "Обработка"))
+print(update_status(5, 'Онлайн'))
 
 
 # ==============================
@@ -69,20 +73,18 @@ def update_status(order_id: int, status: str = "Обработка") -> dict[str
 
 def is_access_granted(user_role: str, min_level: str = "admin") -> bool:
     # Сравниваем роли
-
     return user_role == min_level
     # Если совпадают — True, иначе False
-
-
+print(is_access_granted('admin'))
 # ==============================
 # ЗАДАЧА 7: «Калькулятор ИМТ»
 # ==============================
 
 def calculate_bmi(weight: float, height: float) -> float:
     # Формула BMI = weight / height^2
-
     bmi = weight / (height ** 2)  # Возведение в степень **
     return round(bmi, 1)  # Округление до 1 знака
+print(calculate_bmi(20, 2))
 
 
 # ==============================
@@ -94,6 +96,7 @@ def filter_list(numbers: list[int], threshold: int = 0) -> list[int]:
 
     return [num for num in numbers if num > threshold]
     # List comprehension
+print(filter_list([1, 2, 3, 4, 5], 3))
 
 
 # ==============================
@@ -104,6 +107,7 @@ def make_header(text: str, level: int = 1) -> str:
     # Формируем HTML заголовок
 
     return f"<h{level}>{text}</h{level}>"
+print(make_header('Тема', 2))
 
 
 # ==============================
@@ -115,3 +119,6 @@ def check_coordinates(x: int, y: int, max_val: int = 100) -> bool:
 
     return 0 <= x <= max_val and 0 <= y <= max_val
     # Используем логическое И (and)
+print(check_coordinates(1, 101))
+print(check_coordinates(1, 100))
+print(check_coordinates(200, 100))
