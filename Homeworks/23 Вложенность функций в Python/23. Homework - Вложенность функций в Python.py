@@ -77,7 +77,7 @@ def register_user(username):
     def is_valid():
         return len(username) >= 3  # проверяем длину имени
 
-    if is_valid():
+    if is_valid(): # считаем это True
         return "Пользователь " + username + " зарегистрирован"
     else:
         return "Ошибка: короткое имя"
@@ -103,12 +103,9 @@ def calculate_salary(gross_pay):
     return apply_tax(gross_pay)
 
 print("Задача 6:", calculate_salary(100000))
-
 # print(apply_tax(100000))
 # Эта строка вызовет ошибку NameError,
 # потому что apply_tax существует только внутри функции calculate_salary
-# (локальная область видимости)
-
 
 # Задача 7: «Умный принтер»
 # Напишите функцию print_report(title, *data).
