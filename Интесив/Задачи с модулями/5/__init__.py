@@ -1,0 +1,1 @@
+from list_tool import multiply_list
